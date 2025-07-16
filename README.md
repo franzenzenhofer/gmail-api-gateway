@@ -29,6 +29,7 @@ This is a REAL implementation with:
 - ✅ **Real Gmail API integration** - OAuth2 authentication, read/send/reply emails
 - ✅ **Real Gemini AI integration** - Email analysis, classification, reply generation
 - ✅ **Advanced Loop Prevention** - Fixed the broken math from legacy code with proper SHA-256 hashing
+- ✅ **First-Level Support System** - Complete ticketing, knowledge base, and automated responses
 - ✅ **Working REST API** - Express server with fully documented endpoints
 - ✅ **Modular architecture** - DRY and KISS principles, clean separation of concerns
 - ✅ **Comprehensive tests** - Unit tests + E2E tests with real service mocking
@@ -173,6 +174,56 @@ Request body:
 ```
 POST /api/v1/emails/batch-process
 ```
+
+### 🎯 First-Level Support Operations
+
+#### Process Support Email
+```
+POST /api/v1/support/process-email
+```
+
+Automatically:
+- Creates/updates support ticket
+- Searches knowledge base for solutions
+- Generates personalized response
+- Escalates if needed
+
+Request:
+```json
+{
+  "emailId": "18abc123def"
+}
+```
+
+#### Search Knowledge Base
+```
+POST /api/v1/support/knowledge/search
+```
+
+Request:
+```json
+{
+  "query": "how to reset password",
+  "limit": 5
+}
+```
+
+#### Get/Update Support Ticket
+```
+GET /api/v1/support/tickets/{ticketId}
+PATCH /api/v1/support/tickets/{ticketId}
+```
+
+#### Get Support Metrics
+```
+GET /api/v1/support/metrics?from=2024-01-01&to=2024-01-31
+```
+
+Returns:
+- Total/open tickets
+- Average resolution time
+- Customer satisfaction scores
+- Knowledge gaps analysis
 
 Request body:
 ```json
@@ -328,6 +379,28 @@ ALLOWED_ORIGINS=https://yourdomain.com,https://app.yourdomain.com
 - [x] Whitelist support for trusted domains
 - [x] Progressive backoff delays
 - [x] Automatic sender blocking for repeat offenders
+
+### First-Level Support System (modules/support/)
+- [x] **Knowledge Base Service**
+  - Gemini-powered article search with function calling
+  - Context caching for efficient retrieval
+  - Solution generation from knowledge articles
+  - Knowledge gap analysis
+  - Dynamic article management
+- [x] **Ticket Service**
+  - Complete ticket lifecycle management
+  - Priority calculation based on sentiment/content
+  - Auto-assignment rules
+  - Escalation workflows
+  - Customer history tracking
+  - SLA monitoring
+- [x] **First-Level Agent**
+  - Orchestrates email → ticket → knowledge → response
+  - Sentiment-based escalation
+  - Business hours awareness
+  - Personalized responses using customer history
+  - Automatic categorization
+  - Multi-language support (via Gemini)
 
 ### Email Processing (email-processor.ts)
 - [x] Batch email processing
