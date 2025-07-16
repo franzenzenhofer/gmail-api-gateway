@@ -43,6 +43,12 @@ export function createApp(): Application {
   // Routes
   app.use('/api/v1', authRoutes);
   app.use('/api/v1', emailRoutes);
+  
+  // Support routes - modular first-level support system
+  if (process.env.ENABLE_SUPPORT === 'true') {
+    const supportRoutes = require('./api/routes/support.routes').default;
+    app.use('/api/v1/support', supportRoutes);
+  }
 
   // Error handling middleware
   app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
