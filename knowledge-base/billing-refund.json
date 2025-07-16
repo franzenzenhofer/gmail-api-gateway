@@ -1,0 +1,14 @@
+{
+  "id": "kb-002",
+  "title": "Refund Policy and Process",
+  "content": "We offer a 30-day money-back guarantee on all subscriptions. Here's how to request a refund:\n\n1. Log into your account\n2. Go to Settings > Billing\n3. Click 'Request Refund' next to your subscription\n4. Select the reason for your refund request\n5. Provide any additional feedback (optional)\n6. Submit the request\n\nRefund Timeline:\n- Requests are reviewed within 24 hours\n- Approved refunds are processed within 3-5 business days\n- Funds appear in your account within 5-10 business days depending on your bank\n\nEligibility:\n- Within 30 days of purchase\n- Account must be in good standing\n- No previous refunds on the same subscription\n\nPartial refunds are available for annual subscriptions based on unused months.",
+  "category": "billing",
+  "tags": ["refund", "money back", "billing", "subscription", "payment"],
+  "solutions": [
+    "Use the self-service refund option in Settings > Billing",
+    "Contact support if past 30 days with special circumstances",
+    "Check refund status in your billing history"
+  ],
+  "relatedArticles": ["kb-004", "kb-005"],
+  "lastUpdated": "2024-01-16T10:00:00Z"
+}
